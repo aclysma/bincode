@@ -1,4 +1,4 @@
-#![deny(missing_docs)]
+//#![deny(missing_docs)]
 
 //! Bincode is a crate for encoding and decoding using a tiny binary
 //! serialization strategy.  Using it, you can easily go from having
@@ -41,6 +41,9 @@ mod ser;
 pub use config::Config;
 pub use de::read::{BincodeRead, IoReader, SliceReader};
 pub use error::{Error, ErrorKind, Result};
+
+pub use ser::Serializer;
+pub use config::DefaultOptions;
 
 /// An object that implements this trait can be passed a
 /// serde::Deserializer without knowing its concrete type.
