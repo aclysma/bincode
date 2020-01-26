@@ -67,7 +67,8 @@ pub trait SerializerAcceptor {
     /// Accept a serde::Serializer and do whatever you want with it.
     fn accept<T>(self, T) -> Self::Output
     where
-        T: serde::Serializer<Ok = (), Error = Error>;
+        T: serde::Serializer<Ok = (), Error = Error>,
+        T::Ok: 'static;
 }
 
 /// Get a default configuration object.
